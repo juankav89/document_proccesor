@@ -1,0 +1,3 @@
+class Constants:
+
+    SECTIONS = "sections"

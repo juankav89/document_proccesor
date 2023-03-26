@@ -1,0 +1,7 @@
+flask
+requests
+pytest
+coverage
+oauthlib
+requests_oauthlib
+pytest-mock
