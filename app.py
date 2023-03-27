@@ -11,10 +11,6 @@ root_document = {
     "text": "Some text here",
     "sections": [
         {
-            "name": "subtitle_3",
-            "text": "Text for title 3",
-        },
-        {
             "name": "subtitle_1",
             "text": "Text for title 1",
             "sections": [
@@ -24,6 +20,11 @@ root_document = {
                     "sections": []
                 }
             ]
+        },
+        {
+            "name": "subtitle_2",
+            "text": "Text for Subtitle 2",
+            "sections": []
         }
     ]
 }
@@ -44,6 +45,8 @@ def get_document():
 @app.post("/document")
 @api_response_handler
 def add_document():
-    __args = request.args.to_dict()
+    __args = request.get_json()
     api_manager = Writer(db=root_document)
-    return api_manager.add_document(__args)
+    api_manager.add_document(__args)
+    print(root_document)
+    return "ok"
