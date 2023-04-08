@@ -33,7 +33,7 @@ def test_get_root_document(mocker, root_document, db_information):
 
 def test_get_specific_data(mocker, db_information, specific_data):
     assert_object = create_assert_object(mocker, db_information)
-    query_params = {'section': 'root_document.subtitle_1'}
+    query_params = {'section': 'root_document.subtitle_2'}
     assert assert_object.get_document(query_params) == specific_data
 
 
@@ -41,4 +41,4 @@ def test_get_error_not_data(mocker, db_information):
     assert_object = create_assert_object(mocker, db_information)
     query_params = {'section': 'not_exist_data.subtitle_1'}
     __assert_value = '"not_exist_data" does not exist'
-    assert assert_object.get_document(query_params).message == __assert_value
+    assert assert_object.get_document(query_params)["body"] == __assert_value

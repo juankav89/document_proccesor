@@ -24,7 +24,7 @@ virtual_db = {
             },
             {
                 "name": "subtitle_2",
-                "text": "Text for Subtitle 2",
+                "text": "Text for subtitle 2",
                 "sections": []
             }
         ]
@@ -50,5 +50,4 @@ def add_document():
     __args = request.get_json()
     api_manager = Writer(db=virtual_db)
     api_manager.add_document(__args)
-    print(virtual_db)
     return "ok"
