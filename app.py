@@ -6,8 +6,8 @@ from src.application.writer import Writer
 
 app = Flask(__name__)
 
-virtual_db = {
-    "root_document": {
+virtual_db = [
+    {
         "name": "root_document",
         "text": "Some text here",
         "sections": [
@@ -29,7 +29,7 @@ virtual_db = {
             }
         ]
     }
-}
+]
 
 
 @app.route("/")

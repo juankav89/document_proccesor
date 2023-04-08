@@ -40,5 +40,5 @@ def test_get_specific_data(mocker, db_information, specific_data):
 def test_get_error_not_data(mocker, db_information):
     assert_object = create_assert_object(mocker, db_information)
     query_params = {'section': 'not_exist_data.subtitle_1'}
-    __assert_value = '"not_exist_data" does not exist'
+    __assert_value = "'not_exist_data' does not exist"
     assert assert_object.get_document(query_params)["body"] == __assert_value
