@@ -1,0 +1,29 @@
+{
+  "root_document": {
+        "name": "root_document",
+        "text": "Some text here",
+        "sections": [
+            {
+                "name": "subtitle_1",
+                "text": "Text for title 1",
+                "sections": [
+                    {
+                        "name": "title_1",
+                        "text": "Text for title 1",
+                        "sections": []
+                    }
+                ]
+            },
+            {
+                "name": "subtitle_2",
+                "text": "Text for Subtitle 2",
+                "sections": []
+            }
+        ]
+    },
+  "another_document" : {
+    "name": "another_document",
+    "text": "Some another text here",
+    "sections": []
+  }
+}
