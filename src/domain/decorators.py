@@ -18,7 +18,6 @@ def api_response_handler(f):
             if status_code == 200:
                 return body
         except Exception as err:
-            print(traceback.format_exc())
             status_code = 500
             body = f"Unexpected {type(err).__name__}, {err}"
         return api_response(body, isinstance(body, (dict, list))), status_code

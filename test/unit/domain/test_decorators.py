@@ -14,8 +14,6 @@ def test_exception_handler():
     def inner(*args, **kwargs):
         return response
     expected = api_response(True, False)
-    print(expected)
-    print(inner())
     assert expected == inner()
 
 
