@@ -1,6 +1,4 @@
 import pytest
-from requests.exceptions import RequestException
-
 from src.domain.helper import load_json
 from src.application.reader import Reader
 
@@ -37,8 +35,15 @@ def test_get_specific_data(mocker, db_information, specific_data):
     assert assert_object.get_document(query_params) == specific_data
 
 
-def test_get_error_not_data(mocker, db_information):
+def test_get_not_found_parent(mocker, db_information):
     assert_object = create_assert_object(mocker, db_information)
     query_params = {'section': 'not_exist_data.subtitle_1'}
     __assert_value = "'not_exist_data' does not exist"
+    assert assert_object.get_document(query_params)["body"] == __assert_value
+
+
+def test_get_not_found_child(mocker, db_information):
+    assert_object = create_assert_object(mocker, db_information)
+    query_params = {'section': 'root_document.aaa'}
+    __assert_value = "'aaa' does not exist"
     assert assert_object.get_document(query_params)["body"] == __assert_value

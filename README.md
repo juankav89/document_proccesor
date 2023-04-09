@@ -60,4 +60,18 @@ Return content from document_root
 |---------|--------|-------------------------------|----------------------------------|
 | section | string | route of information required | section=root_document.subtitle_2 |
 
-asdsd
+
+### Add document information 
+`type=POST`
+```
+http://localhost:80/document
+```
+Add new data into system
+
+| PARAMS | TYPE   | DATA                          | EXAMPLE                  |
+|--------|--------|-------------------------------|--------------------------|
+| path   | string | route of information required | root_document.subtitle_2 |
+| name   | string | name of new section           | my_new_section           |
+| text   | string | text of new section           | text for my new section  |
+
+Response return `ok` if data inserted correctly

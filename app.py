@@ -49,5 +49,4 @@ def get_document():
 def add_document():
     __args = request.get_json()
     api_manager = Writer(db=virtual_db)
-    api_manager.add_document(__args)
-    return "ok"
+    return api_manager.add_document(__args)
